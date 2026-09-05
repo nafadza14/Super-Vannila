@@ -12,47 +12,47 @@ interface Testimonial {
 
 const baseTestimonials: Testimonial[] = [
   {
-    name: 'Marcus Anderson',
-    role: 'CEO',
-    company: 'Data.storage',
+    name: 'Michael Thorne',
+    role: 'Procurement Director',
+    company: 'Pacific Flavor Labs (USA)',
     quote:
-      'With very little guidance team delivered designs that were consistently spot on. The attention to typography and spacing set a whole new benchmark for our core platform.',
+      'Super Vanilla delivers consistent moisture and vanillin levels shipment after shipment. Their direct origin sourcing and transparent export documentation gave us full supply chain confidence.',
     avatar:
       'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150',
   },
   {
-    name: 'alexwu',
-    role: 'Founder',
-    company: 'Nexgate',
+    name: 'Hélène Laurent',
+    role: 'Master Pastry & Sourcing Lead',
+    company: 'Maison Gourmande (France)',
     quote:
-      'Viktor led the creation of our best fundraising deck to date! Investors immediately commented on how razor-sharp and cohesive our visual brand narrative felt.',
-    avatar:
-      'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150',
-  },
-  {
-    name: 'James Mitchell',
-    role: 'VP Product',
-    company: 'LaunchPad',
-    quote:
-      'Working with Viktor transformed our product vision. He operates with unprecedented speed while preserving Apple-grade design craftsmanship at every milestone.',
-    avatar:
-      'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
-  },
-  {
-    name: 'Rachel Foster',
-    role: 'Co-founder',
-    company: 'Nexus Labs',
-    quote:
-      'The design quality exceeded our expectations. The turnaround times were astonishing, and our active user conversion jumped 42% after the studio redesign.',
+      'The gourmet Grade A Planifolia beans from Super Vanilla have an incredible oily sheen and rich vanillin aroma. Our pastry network relies completely on their quality.',
     avatar:
       'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
   },
   {
-    name: 'David Zhang',
-    role: 'Head of Design',
-    company: 'Paradigm Labs',
+    name: 'Dr. Kenji Sato',
+    role: 'Head of R&D',
+    company: 'Kyoto Botanical Extracts (Japan)',
     quote:
-      'Incredible work from start to finish. Having direct access to Viktor rather than account managers allowed us to iterate on complex UI challenges in real-time.',
+      'Finding reliable Grade B beans for extract production with zero synthetic additives was challenging until we partnered with Super Vanilla. Truly export-grade quality.',
+    avatar:
+      'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150',
+  },
+  {
+    name: 'Sarah Jenkins',
+    role: 'VP Operations',
+    company: 'Artisan Confectionery (Australia)',
+    quote:
+      'Their communication and export handling to Melbourne was seamless. Phytosanitary certificates and vacuum packaging arrived in pristine commercial condition.',
+    avatar:
+      'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
+  },
+  {
+    name: 'Tobias Weber',
+    role: 'Ingredient Sourcing Manager',
+    company: 'Bavarian Dairy & Foods (Germany)',
+    quote:
+      'Direct connection to Indonesian vanilla origins without middleman markups. Super Vanilla is now our primary trusted partner for all bulk vanilla bean procurement.',
     avatar:
       'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=150',
   },
@@ -136,7 +136,7 @@ export const TestimonialCarousel: React.FC = () => {
       >
         <div>
           <h2 className="text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight">
-            What <span className="font-mondwest italic font-normal">builders</span> say
+            What <span className="font-mondwest italic font-normal">buyers</span> say
           </h2>
         </div>
 
@@ -147,7 +147,7 @@ export const TestimonialCarousel: React.FC = () => {
                 <Star key={i} className="w-5 h-5 fill-black text-black" />
               ))}
             </div>
-            <span className="font-sans font-medium text-sm text-[#0D212C]">Clutch 5/5</span>
+            <span className="font-sans font-medium text-sm text-[#0D212C]">Verified B2B Export</span>
           </div>
 
           <div className="flex items-center gap-2">

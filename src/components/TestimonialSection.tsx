@@ -59,7 +59,7 @@ export const TestimonialSection: React.FC = () => {
         }`}
         style={{ animationDelay: '0.2s' }}
       >
-        &lsquo;I left <span className="font-mondwest italic font-normal">Apple</span> to build the studio I always wanted to work with&rsquo;
+        &lsquo;Sourcing vanilla is easy. Finding the <span className="font-mondwest italic font-normal">right supplier</span> is not&rsquo;
       </blockquote>
 
       {/* Author */}
@@ -69,33 +69,33 @@ export const TestimonialSection: React.FC = () => {
         }`}
         style={{ animationDelay: '0.3s' }}
       >
-        Viktor Oddy
+        Super Vanilla Indonesia · Direct Origin Sourcing
       </p>
 
-      {/* Company logos displayed as text */}
+      {/* Company logos / key product types displayed as text */}
       <div
-        className={`flex items-center justify-center gap-8 md:gap-12 mb-12 flex-wrap ${
+        className={`flex items-center justify-center gap-6 md:gap-10 mb-12 flex-wrap ${
           isInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
         style={{ animationDelay: '0.4s' }}
       >
         <span
-          className="font-medium text-slate-900 inline-block text-center"
-          style={{ width: '80px', fontSize: '24px' }}
+          className="font-medium text-slate-900 inline-block text-center tracking-tight"
+          style={{ width: '100px', fontSize: '22px' }}
         >
-          Apple
+          Planifolia
         </span>
         <span
-          className="font-medium text-slate-900 inline-block text-center tracking-wider"
-          style={{ width: '83px', fontSize: '24px' }}
+          className="font-medium text-slate-900 inline-block text-center tracking-tight"
+          style={{ width: '100px', fontSize: '22px' }}
         >
-          IDEO
+          Tahitensis
         </span>
         <span
-          className="font-medium text-slate-900 inline-block text-center"
-          style={{ width: '110px', fontSize: '24px' }}
+          className="font-medium text-slate-900 inline-block text-center tracking-tight"
+          style={{ width: '110px', fontSize: '22px' }}
         >
-          Polygon
+          Gourmet A
         </span>
       </div>
 
@@ -109,8 +109,8 @@ export const TestimonialSection: React.FC = () => {
           style={{ transform: `translate3d(0, ${parallaxY}px, 0)` }}
         >
           <img
-            src="https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260330_103804_7aa5494f-4d5b-432e-9dc7-20715275f143.png&w=1280&q=85"
-            alt="Chris Halaska"
+            src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=85"
+            alt="Indonesian Vanilla Beans"
             className="w-full h-auto object-cover rounded-2xl"
             loading="lazy"
             referrerPolicy="no-referrer"

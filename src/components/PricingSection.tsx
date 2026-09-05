@@ -2,7 +2,11 @@ import React from 'react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import Button from './Button';
 
-export const PricingSection: React.FC = () => {
+interface PricingSectionProps {
+  onOpenQuote?: () => void;
+}
+
+export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenQuote }) => {
   const { ref: sectionRef, isInView } = useInViewAnimation<HTMLElement>({ threshold: 0.1 });
 
   return (
@@ -22,37 +26,35 @@ export const PricingSection: React.FC = () => {
           >
             <div>
               <h3 className="text-[22px] font-medium text-[#F6FCFF] mb-4">
-                Monthly Partnership
+                Wholesale &amp; Bulk Supply
               </h3>
               <p className="text-sm md:text-base text-[#E0EBF0] leading-relaxed mb-8">
-                A dedicated creative design team.
+                Direct supply for extract producers, food manufacturers &amp; distributors.
                 <br />
-                You work directly with Viktor.
+                Custom moisture, vanillin specs &amp; full export documentation.
               </p>
             </div>
 
             <div>
               <div className="mb-6">
-                <div className="text-2xl font-semibold text-[#F6FCFF]">$5,000</div>
-                <div className="text-sm text-[#E0EBF0]/80">Monthly</div>
+                <div className="text-2xl font-semibold text-[#F6FCFF]">Wholesale</div>
+                <div className="text-sm text-[#E0EBF0]/80">Custom FOB / CIF Pricing</div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   variant="primary"
-                  href="https://halaskastudio.com/./book"
-                  target="_blank"
+                  onClick={onOpenQuote}
                   className="!px-6 !py-2.5 text-sm"
                 >
-                  Start a chat
+                  Request a quote
                 </Button>
                 <Button
                   variant="secondary"
-                  href="https://halaskastudio.com/./book"
-                  target="_blank"
+                  href="#products"
                   className="!px-6 !py-2.5 text-sm"
                 >
-                  How it works
+                  Our process
                 </Button>
               </div>
             </div>
@@ -67,29 +69,28 @@ export const PricingSection: React.FC = () => {
           >
             <div>
               <h3 className="text-[22px] font-medium text-[#0D212C] mb-4">
-                Custom Project
+                Gourmet Grade A Beans
               </h3>
               <p className="text-sm md:text-base text-[#051A24]/75 leading-relaxed mb-8">
-                Fixed scope, fixed timeline.
+                Selected whole pods for bakeries, confectionery &amp; specialty brands.
                 <br />
-                Same team, same standards.
+                Plump, oily texture, high aroma &amp; rich vanillin crystallization.
               </p>
             </div>
 
             <div>
               <div className="mb-6">
-                <div className="text-2xl font-semibold text-[#0D212C]">$5,000</div>
-                <div className="text-sm text-[#051A24]/60">Minimum</div>
+                <div className="text-2xl font-semibold text-[#0D212C]">Grade A</div>
+                <div className="text-sm text-[#051A24]/60">Export-grade packaging</div>
               </div>
 
               <div>
                 <Button
                   variant="tertiary"
-                  href="https://halaskastudio.com/./book"
-                  target="_blank"
+                  onClick={onOpenQuote}
                   className="!px-6 !py-2.5 text-sm"
                 >
-                  Start a chat
+                  Request a quote
                 </Button>
               </div>
             </div>

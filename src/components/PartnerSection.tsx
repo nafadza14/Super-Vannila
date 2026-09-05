@@ -1,15 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
+interface PartnerSectionProps {
+  onOpenQuote?: () => void;
+}
+
 const marqueeImages = [
-  'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-  'https://motionsites.ai/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif',
-  'https://motionsites.ai/assets/hero-velorah-preview-CJNTtbpd.gif',
-  'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-  'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
-  'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
-  'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-  'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
+  'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80',
+  'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80',
 ];
 
 interface ThumbnailItem {
@@ -21,7 +25,7 @@ interface ThumbnailItem {
   createdAt: number;
 }
 
-export const PartnerSection: React.FC = () => {
+export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) => {
   const { ref: sectionRef, isInView } = useInViewAnimation<HTMLElement>({ threshold: 0.1 });
   const containerRef = useRef<HTMLDivElement>(null);
   const [thumbnails, setThumbnails] = useState<ThumbnailItem[]>([]);
@@ -120,19 +124,18 @@ export const PartnerSection: React.FC = () => {
         </h2>
 
         {/* CTA Button */}
-        <a
-          href="https://halaskastudio.com/./book"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={onOpenQuote}
           className="z-20 inline-flex items-center gap-4 bg-[#051A24] text-white rounded-full pl-3 pr-8 py-2.5 shadow-button-primary hover:bg-[#092736] transition-transform duration-200 active:scale-[0.98] cursor-pointer"
         >
           <img
-            src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150"
-            alt="Viktor"
+            src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150"
+            alt="Export Procurement Lead"
             className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
           />
-          <span className="font-sans text-base font-medium">Start chat with Viktor</span>
-        </a>
+          <span className="font-sans text-base font-medium">Talk to our export team</span>
+        </button>
       </div>
     </section>
   );

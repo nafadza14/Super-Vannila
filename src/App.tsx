@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useInViewAnimation } from './hooks/useInViewAnimation';
 import Button from './components/Button';
 import TestimonialSection from './components/TestimonialSection';
@@ -14,23 +14,25 @@ import PartnerSection from './components/PartnerSection';
 import Footer from './components/Footer';
 import CopyrightBar from './components/CopyrightBar';
 import BottomNav from './components/BottomNav';
+import QuoteModal from './components/QuoteModal';
 
-const marqueeGifs = [
-  'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
-  'https://motionsites.ai/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif',
-  'https://motionsites.ai/assets/hero-velorah-preview-CJNTtbpd.gif',
-  'https://motionsites.ai/assets/hero-asme-preview-B_nGDnTP.gif',
-  'https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif',
-  'https://motionsites.ai/assets/hero-aethera-preview-DknSlcTa.gif',
-  'https://motionsites.ai/assets/hero-orbit-web3-preview-BXt4OttD.gif',
-  'https://motionsites.ai/assets/hero-nexora-preview-cx5HmUgo.gif',
+const marqueeImages = [
+  'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80',
+  'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
 ];
 
-// Duplicated 8 GIF images (total 16) for seamless continuous marquee
-const allMarqueeGifs = [...marqueeGifs, ...marqueeGifs];
+// Duplicated 8 images (total 16) for seamless continuous marquee
+const allMarqueeImages = [...marqueeImages, ...marqueeImages];
 
 export default function App() {
   const { ref: heroRef, isInView: heroInView } = useInViewAnimation<HTMLElement>({ threshold: 0.1 });
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-white text-[#051A24] font-sans antialiased overflow-x-hidden selection:bg-[#051A24] selection:text-white">
@@ -46,17 +48,17 @@ export default function App() {
           }`}
           style={{ animationDelay: '0.1s' }}
         >
-          Viktor Oddy
+          Super Vanilla
         </h1>
 
         {/* Tagline */}
         <p
-          className={`font-mono text-xs md:text-sm text-[#051A24] mb-2 ${
+          className={`font-mono text-xs md:text-sm text-[#051A24] mb-2 uppercase tracking-wide ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.2s' }}
         >
-          The creative studio of Viktor Oddy
+          Indonesian Vanilla · Direct from Origin
         </p>
 
         {/* Main Heading */}
@@ -67,10 +69,10 @@ export default function App() {
           style={{ animationDelay: '0.3s' }}
         >
           <div>
-            Build the <span className="font-mondwest italic font-normal">next wave,</span>
+            Premium Indonesian
           </div>
           <div>
-            <span className="font-mondwest italic font-normal">the bold way.</span>
+            <span className="font-mondwest italic font-normal">vanilla beans,</span> sourced at origin.
           </div>
         </div>
 
@@ -82,15 +84,15 @@ export default function App() {
           style={{ animationDelay: '0.4s' }}
         >
           <p>
-            I spent seven years at Apple crafting products used by over a billion people. I founded
-            Vortex Studio to bring that same level of thinking to innovators shaping what comes next.
+            Super Vanilla is an Indonesian vanilla supplier and exporter providing premium vanilla
+            beans directly from Indonesia for food manufacturers, extract producers, flavor houses, and global wholesale buyers.
           </p>
           <p>
-            The studio is deliberately small. I guide the creative vision on every project, backed by a
-            veteran design crew that moves fast without cutting corners.
+            From Indonesian farms to your production line, we focus on quality sourcing, careful
+            curing, consistent specifications, and reliable export fulfillment across international markets.
           </p>
           <p className="font-medium text-[#051A24]">
-            Projects start at $5,000 per month.
+            Direct Indonesian Origin · Wholesale &amp; Bulk Supply · Export-Ready
           </p>
         </div>
 
@@ -103,29 +105,28 @@ export default function App() {
         >
           <Button
             variant="primary"
-            href="https://halaskastudio.com/./book"
-            target="_blank"
+            onClick={() => setIsQuoteModalOpen(true)}
           >
-            Start a chat
+            Request a quote
           </Button>
           <Button
             variant="secondary"
             href="#projects"
           >
-            View projects
+            Explore beans
           </Button>
         </div>
       </section>
 
       {/* 2. INFINITE MARQUEE */}
-      <section className="w-full overflow-hidden mt-16 md:mt-20 mb-16 select-none" aria-label="Selected works showcase">
+      <section className="w-full overflow-hidden mt-16 md:mt-20 mb-16 select-none" aria-label="Selected vanilla origin showcase">
         <div className="animate-marquee">
-          {allMarqueeGifs.map((gifUrl, idx) => (
+          {allMarqueeImages.map((imageUrl, idx) => (
             <div key={`marquee-${idx}`} className="mx-3 shrink-0">
               <img
-                src={gifUrl}
-                alt={`Project preview ${idx + 1}`}
-                className="h-[280px] md:h-[500px] object-cover rounded-2xl shadow-lg"
+                src={imageUrl}
+                alt={`Vanilla origin showcase ${idx + 1}`}
+                className="h-[280px] md:h-[500px] w-[240px] md:w-[420px] object-cover rounded-2xl shadow-lg"
                 loading={idx < 4 ? 'eager' : 'lazy'}
               />
             </div>
@@ -137,7 +138,7 @@ export default function App() {
       <TestimonialSection />
 
       {/* 4. PRICING SECTION */}
-      <PricingSection />
+      <PricingSection onOpenQuote={() => setIsQuoteModalOpen(true)} />
 
       {/* 5. TESTIMONIAL CAROUSEL */}
       <TestimonialCarousel />
@@ -146,16 +147,22 @@ export default function App() {
       <ProjectsSection />
 
       {/* 7. PARTNER SECTION */}
-      <PartnerSection />
+      <PartnerSection onOpenQuote={() => setIsQuoteModalOpen(true)} />
 
       {/* 8. FOOTER */}
-      <Footer />
+      <Footer onOpenQuote={() => setIsQuoteModalOpen(true)} />
 
       {/* 9. COPYRIGHT BAR */}
       <CopyrightBar />
 
       {/* 10. FIXED BOTTOM NAV */}
-      <BottomNav />
+      <BottomNav onOpenQuote={() => setIsQuoteModalOpen(true)} />
+
+      {/* Quotation Request Modal */}
+      <QuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+      />
     </div>
   );
 }

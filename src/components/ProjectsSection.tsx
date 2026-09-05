@@ -9,19 +9,19 @@ interface ProjectItem {
 
 const projects: ProjectItem[] = [
   {
-    name: 'evr',
-    description: 'From idea to millions raised for a web3 AI product',
-    image: 'https://motionsites.ai/assets/hero-evr-ventures-preview-DZxeVFEX.gif',
+    name: 'Gourmet Vanilla Planifolia',
+    description: 'Carefully selected Indonesian vanilla beans for premium culinary, bakery, and confectionery applications',
+    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=85',
   },
   {
-    name: 'Automation Machines',
-    description: 'Streamlining industrial automation processes',
-    image: 'https://motionsites.ai/assets/hero-automation-machines-preview-DlTveRIN.gif',
+    name: 'Grade B Vanilla for Extract',
+    description: 'Optimized for commercial extract production, industrial food applications, and flavor manufacturing',
+    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=85',
   },
   {
-    name: 'xPortfolio',
-    description: 'Modern portfolio management platform',
-    image: 'https://motionsites.ai/assets/hero-xportfolio-preview-D4A8maiC.gif',
+    name: 'Indonesian Vanilla Tahitensis',
+    description: 'Floral and fruity aromatic profile suited for specialty confectionery, beverages, and craft food brands',
+    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=85',
   },
 ];
 
