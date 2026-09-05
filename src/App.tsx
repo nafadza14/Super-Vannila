@@ -92,15 +92,6 @@ export default function App() {
           >
             Explore grades &amp; specs
           </Button>
-          <a
-            href="https://wa.me/6281234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-mono font-medium text-[#051A24] px-4 py-3 rounded-full hover:bg-slate-100 transition-colors border border-slate-200"
-          >
-            <span>WhatsApp Export Desk</span>
-            <span className="text-slate-400">→</span>
-          </a>
         </div>
 
         {/* Quick Specs Highlights (Rata Kiri) */}

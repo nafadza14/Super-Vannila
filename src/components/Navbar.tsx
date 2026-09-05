@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import Button from './Button';
+import { COMPANY_INFO } from '../data/company';
 
 interface NavbarProps {
   onOpenQuote?: () => void;
@@ -73,15 +74,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
         {/* Right CTA Actions */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="https://wa.me/6281234567890"
+            href={COMPANY_INFO.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-[#051A24] hover:bg-slate-100 px-3 py-2 rounded-full transition-colors border border-slate-200"
+            className="inline-flex items-center text-xs font-mono font-medium text-[#051A24] hover:bg-slate-100 px-3.5 py-2 rounded-full transition-colors border border-slate-200"
             aria-label="Direct Export WhatsApp Chat"
           >
-            <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-            <span>WA Desk</span>
-            <ArrowUpRight className="w-3 h-3 text-[#051A24]/50" />
+            WA Desk
           </a>
 
           <Button
@@ -149,13 +148,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
               Request a quote
             </Button>
             <a
-              href="https://wa.me/6281234567890"
+              href={COMPANY_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 text-xs font-mono text-[#051A24] py-2.5 rounded-full border border-slate-200 hover:bg-slate-50 transition-colors"
+              className="inline-flex items-center justify-center text-xs font-mono font-medium text-[#051A24] py-2.5 rounded-full border border-slate-200 hover:bg-slate-50 transition-colors"
             >
-              <MessageCircle className="w-4 h-4 text-emerald-600" />
-              <span>WhatsApp Export Desk (+62 812-3456-7890)</span>
+              <span>WA Desk (Direct Chat)</span>
             </a>
           </div>
         </div>

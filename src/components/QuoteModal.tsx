@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, CheckCircle, Send, ArrowRight } from 'lucide-react';
 import Button from './Button';
+import { COMPANY_INFO } from '../data/company';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -34,7 +35,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
     const text = encodeURIComponent(
       `Hello Super Vanilla Export Team! My name is ${formData.name || 'a buyer'} from ${formData.company || 'our company'} (${formData.country || 'International'}). We are interested in wholesale ${formData.product} (${formData.grade}), estimated quantity: ${formData.quantity || 'TBD'}. Destination port: ${formData.destinationPort || 'TBD'}.`
     );
-    window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+    window.open(`${COMPANY_INFO.whatsappUrl}?text=${text}`, '_blank');
   };
 
   return (
