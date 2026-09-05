@@ -11,10 +11,11 @@ export const PricingSection: React.FC<PricingSectionProps> = ({ onOpenQuote }) =
 
   return (
     <section
-      id="services"
+      id="wholesale"
       ref={sectionRef}
-      className="w-full py-12 px-6"
+      className="w-full py-12 px-6 scroll-mt-24"
     >
+      <div id="services" className="sr-only" />
       <div className="max-w-4xl mx-auto md:ml-auto md:mr-auto lg:mr-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:justify-end">
           {/* Card 1: Dark */}

@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import { useInViewAnimation } from './hooks/useInViewAnimation';
+import Navbar from './components/Navbar';
 import Button from './components/Button';
 import TestimonialSection from './components/TestimonialSection';
 import PricingSection from './components/PricingSection';
@@ -15,20 +16,10 @@ import Footer from './components/Footer';
 import CopyrightBar from './components/CopyrightBar';
 import BottomNav from './components/BottomNav';
 import QuoteModal from './components/QuoteModal';
+import { HERO_MARQUEE_PHOTOS } from './data/photos';
 
-const marqueeImages = [
-  'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80',
-  'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
-];
-
-// Duplicated 8 images (total 16) for seamless continuous marquee
-const allMarqueeImages = [...marqueeImages, ...marqueeImages];
+// Duplicated 13 images for seamless continuous marquee loop
+const allMarqueeImages = [...HERO_MARQUEE_PHOTOS, ...HERO_MARQUEE_PHOTOS];
 
 export default function App() {
   const { ref: heroRef, isInView: heroInView } = useInViewAnimation<HTMLElement>({ threshold: 0.1 });
@@ -36,85 +27,109 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#051A24] font-sans antialiased overflow-x-hidden selection:bg-[#051A24] selection:text-white">
-      {/* 1. HERO SECTION */}
+      {/* 0. DIRECT NAVIGATION NAVBAR */}
+      <Navbar onOpenQuote={() => setIsQuoteModalOpen(true)} />
+
+      {/* 1. HERO SECTION (RATA KIRI / LEFT-ALIGNED) */}
       <section
         ref={heroRef}
-        className="max-w-[440px] mx-auto px-6 pt-12 md:pt-16 flex flex-col"
+        className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 md:pt-14 pb-4 flex flex-col items-start text-left"
       >
-        {/* Logo text */}
-        <h1
-          className={`font-mondwest text-[32px] md:text-[40px] lg:text-[44px] font-semibold text-[#051A24] tracking-tight mb-4 ${
+        {/* Origin Pill / Badge */}
+        <div
+          className={`inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#051A24]/5 border border-[#051A24]/10 text-xs font-mono uppercase tracking-wider text-[#051A24] mb-5 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.1s' }}
         >
-          Super Vanilla
-        </h1>
+          Indonesian Vanilla Origin · Direct Bulk &amp; Wholesale Exporter
+        </div>
 
-        {/* Tagline */}
-        <p
-          className={`font-mono text-xs md:text-sm text-[#051A24] mb-2 uppercase tracking-wide ${
+        {/* Main Heading (Rata Kiri) */}
+        <h1
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-[1.08] text-[#0D212C] font-sans tracking-tight max-w-4xl text-left mb-6 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.2s' }}
         >
-          Indonesian Vanilla · Direct from Origin
-        </p>
+          Premium Indonesian <br className="hidden sm:inline" />
+          <span className="font-mondwest italic font-normal text-[#051A24]">vanilla beans,</span> sourced direct at origin.
+        </h1>
 
-        {/* Main Heading */}
+        {/* Description / Value Proposition (Rata Kiri) */}
         <div
-          className={`text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight whitespace-nowrap ${
+          className={`max-w-2xl text-base md:text-lg text-[#051A24]/80 leading-relaxed text-left flex flex-col gap-4 mb-8 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.3s' }}
         >
-          <div>
-            Premium Indonesian
-          </div>
-          <div>
-            <span className="font-mondwest italic font-normal">vanilla beans,</span> sourced at origin.
-          </div>
+          <p>
+            Super Vanilla is an Indonesian vanilla grower, curer, and international exporter. We supply export-grade Gourmet Planifolia and Tahitensis beans directly to global food manufacturers, extract producers, flavor houses, and wholesale distributors.
+          </p>
+          <p>
+            From volcanic soil farms across Indonesia to your processing facility, we guarantee consistent vanillin content, controlled moisture curing, and streamlined phytosanitary &amp; export clearance.
+          </p>
         </div>
 
-        {/* Description: Three paragraphs */}
+        {/* Action Buttons (Rata Kiri) */}
         <div
-          className={`flex flex-col gap-6 text-sm md:text-base text-[#051A24] leading-relaxed mt-5 md:mt-6 ${
+          className={`flex flex-wrap items-center gap-3 sm:gap-4 mb-10 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.4s' }}
         >
-          <p>
-            Super Vanilla is an Indonesian vanilla supplier and exporter providing premium vanilla
-            beans directly from Indonesia for food manufacturers, extract producers, flavor houses, and global wholesale buyers.
-          </p>
-          <p>
-            From Indonesian farms to your production line, we focus on quality sourcing, careful
-            curing, consistent specifications, and reliable export fulfillment across international markets.
-          </p>
-          <p className="font-medium text-[#051A24]">
-            Direct Indonesian Origin · Wholesale &amp; Bulk Supply · Export-Ready
-          </p>
+          <Button
+            variant="primary"
+            onClick={() => setIsQuoteModalOpen(true)}
+            className="!px-7 !py-3.5 text-sm md:text-base font-medium shadow-button-primary"
+          >
+            Request a wholesale quote
+          </Button>
+          <Button
+            variant="secondary"
+            href="#products"
+            className="!px-6 !py-3.5 text-sm md:text-base font-medium"
+          >
+            Explore grades &amp; specs
+          </Button>
+          <a
+            href="https://wa.me/6281234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs font-mono font-medium text-[#051A24] px-4 py-3 rounded-full hover:bg-slate-100 transition-colors border border-slate-200"
+          >
+            <span>WhatsApp Export Desk</span>
+            <span className="text-slate-400">→</span>
+          </a>
         </div>
 
-        {/* Buttons */}
+        {/* Quick Specs Highlights (Rata Kiri) */}
         <div
-          className={`flex flex-col sm:flex-row gap-3 md:gap-4 mt-5 md:mt-6 ${
+          className={`w-full max-w-4xl pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-left ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.5s' }}
         >
-          <Button
-            variant="primary"
-            onClick={() => setIsQuoteModalOpen(true)}
-          >
-            Request a quote
-          </Button>
-          <Button
-            variant="secondary"
-            href="#projects"
-          >
-            Explore beans
-          </Button>
+          <div>
+            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Grades</div>
+            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">Gourmet A &amp; Grade B</div>
+            <div className="text-xs text-[#051A24]/70 mt-0.5">16–22cm Gourmet Pods</div>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Moisture</div>
+            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">25% – 35%</div>
+            <div className="text-xs text-[#051A24]/70 mt-0.5">Slow solar-cured</div>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Vanillin Content</div>
+            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">&gt; 2.0% Natural</div>
+            <div className="text-xs text-[#051A24]/70 mt-0.5">CoA Lab Verified</div>
+          </div>
+          <div>
+            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Fulfillment</div>
+            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">FOB &amp; CIF Global</div>
+            <div className="text-xs text-[#051A24]/70 mt-0.5">Phytosanitary Certified</div>
+          </div>
         </div>
       </section>
 
@@ -128,6 +143,7 @@ export default function App() {
                 alt={`Vanilla origin showcase ${idx + 1}`}
                 className="h-[280px] md:h-[500px] w-[240px] md:w-[420px] object-cover rounded-2xl shadow-lg"
                 loading={idx < 4 ? 'eager' : 'lazy'}
+                referrerPolicy="no-referrer"
               />
             </div>
           ))}

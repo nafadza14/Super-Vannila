@@ -122,8 +122,9 @@ export const TestimonialCarousel: React.FC = () => {
 
   return (
     <section
+      id="reviews"
       ref={sectionRef}
-      className="w-full py-20 overflow-hidden select-none"
+      className="w-full py-20 overflow-hidden select-none scroll-mt-24"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

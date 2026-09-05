@@ -1,20 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import { STOCK_PHOTOS, TEAM_AVATAR_PHOTO } from '../data/photos';
 
 interface PartnerSectionProps {
   onOpenQuote?: () => void;
 }
 
-const marqueeImages = [
-  'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1514733670139-4d87a1941d55?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80',
-];
+const marqueeImages = STOCK_PHOTOS;
 
 interface ThumbnailItem {
   id: number;
@@ -78,8 +70,9 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
 
   return (
     <section
+      id="contact"
       ref={sectionRef}
-      className="w-full py-12 px-6"
+      className="w-full py-12 px-6 scroll-mt-24"
     >
       <div
         ref={containerRef}
@@ -113,6 +106,7 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
                 src={item.image}
                 alt="preview"
                 className="w-full h-full object-cover rounded-xl"
+                referrerPolicy="no-referrer"
               />
             </div>
           );
@@ -130,9 +124,10 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
           className="z-20 inline-flex items-center gap-4 bg-[#051A24] text-white rounded-full pl-3 pr-8 py-2.5 shadow-button-primary hover:bg-[#092736] transition-transform duration-200 active:scale-[0.98] cursor-pointer"
         >
           <img
-            src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150"
+            src={TEAM_AVATAR_PHOTO}
             alt="Export Procurement Lead"
             className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
+            referrerPolicy="no-referrer"
           />
           <span className="font-sans text-base font-medium">Talk to our export team</span>
         </button>

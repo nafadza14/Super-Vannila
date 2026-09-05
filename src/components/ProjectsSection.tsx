@@ -1,5 +1,6 @@
 import React from 'react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import { PRODUCT_PHOTOS } from '../data/photos';
 
 interface ProjectItem {
   name: string;
@@ -11,17 +12,17 @@ const projects: ProjectItem[] = [
   {
     name: 'Gourmet Vanilla Planifolia',
     description: 'Carefully selected Indonesian vanilla beans for premium culinary, bakery, and confectionery applications',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=85',
+    image: PRODUCT_PHOTOS.planifolia,
   },
   {
     name: 'Grade B Vanilla for Extract',
     description: 'Optimized for commercial extract production, industrial food applications, and flavor manufacturing',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1400&q=85',
+    image: PRODUCT_PHOTOS.gradeB,
   },
   {
     name: 'Indonesian Vanilla Tahitensis',
     description: 'Floral and fruity aromatic profile suited for specialty confectionery, beverages, and craft food brands',
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=85',
+    image: PRODUCT_PHOTOS.tahitensis,
   },
 ];
 
@@ -51,6 +52,7 @@ const ProjectCard: React.FC<{ project: ProjectItem; index: number }> = ({ projec
           alt={project.name}
           className="w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-[1.01]"
           loading="lazy"
+          referrerPolicy="no-referrer"
         />
       </div>
     </div>
@@ -59,7 +61,9 @@ const ProjectCard: React.FC<{ project: ProjectItem; index: number }> = ({ projec
 
 export const ProjectsSection: React.FC = () => {
   return (
-    <section id="projects" className="max-w-[1200px] mx-auto px-6 py-12">
+    <section id="products" className="max-w-[1200px] mx-auto px-6 py-12 scroll-mt-24">
+      {/* Anchor for backward compatibility */}
+      <div id="projects" className="sr-only" />
       <div className="flex flex-col gap-16 md:gap-20">
         {projects.map((proj, index) => (
           <ProjectCard key={proj.name} project={proj} index={index} />

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Quote } from 'lucide-react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import { PARALLAX_PHOTO } from '../data/photos';
 
 export const TestimonialSection: React.FC = () => {
   const { ref: sectionRef, isInView } = useInViewAnimation<HTMLElement>({ threshold: 0.1 });
@@ -42,8 +43,9 @@ export const TestimonialSection: React.FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="py-12 px-6 max-w-2xl mx-auto flex flex-col items-center text-center"
+      className="py-12 px-6 max-w-2xl mx-auto flex flex-col items-center text-center scroll-mt-24"
     >
+      <div id="origin" className="sr-only" />
       {/* Quote icon */}
       <div
         className={`mb-6 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
@@ -109,7 +111,7 @@ export const TestimonialSection: React.FC = () => {
           style={{ transform: `translate3d(0, ${parallaxY}px, 0)` }}
         >
           <img
-            src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=85"
+            src={PARALLAX_PHOTO}
             alt="Indonesian Vanilla Beans"
             className="w-full h-auto object-cover rounded-2xl"
             loading="lazy"
