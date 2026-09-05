@@ -1,0 +1,6 @@
+{
+  "name": "Super Vanilla",
+  "description": "The creative studio of Viktor Oddy - Build the next wave, the bold way.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
