@@ -36,21 +36,21 @@ const ProjectCard: React.FC<{ project: ProjectItem; index: number }> = ({ projec
       style={{ animationDelay: '0.2s' }}
     >
       {/* Offset text block */}
-      <div className="ml-12 sm:ml-20 md:ml-28 mb-4">
-        <h3 className="font-mondwest text-2xl md:text-3xl font-semibold text-[#051A24]">
+      <div className="px-1 sm:ml-10 md:ml-20 mb-3 sm:mb-4">
+        <h3 className="font-mondwest text-xl sm:text-2xl md:text-3xl font-semibold text-[#051A24]">
           {project.name}
         </h3>
-        <p className="text-sm md:text-base text-[#051A24]/70 mt-1">
+        <p className="text-xs sm:text-sm md:text-base text-[#051A24]/70 mt-1">
           {project.description}
         </p>
       </div>
 
       {/* Full-width image container */}
-      <div className="w-full rounded-2xl shadow-lg overflow-hidden bg-slate-100 aspect-[16/10] md:aspect-[16/9] max-h-[640px]">
+      <div className="w-full rounded-xl sm:rounded-2xl shadow-lg overflow-hidden bg-slate-100 aspect-[16/10] md:aspect-[16/9] max-h-[640px]">
         <img
           src={project.image}
           alt={project.name}
-          className="w-full h-full object-cover rounded-2xl transition-transform duration-500 hover:scale-[1.01]"
+          className="w-full h-full object-cover rounded-xl sm:rounded-2xl transition-transform duration-500 hover:scale-[1.01]"
           loading="lazy"
           referrerPolicy="no-referrer"
         />
@@ -61,10 +61,10 @@ const ProjectCard: React.FC<{ project: ProjectItem; index: number }> = ({ projec
 
 export const ProjectsSection: React.FC = () => {
   return (
-    <section id="products" className="max-w-[1200px] mx-auto px-6 py-12 scroll-mt-24">
+    <section id="products" className="max-w-[1200px] mx-auto px-4 sm:px-6 py-8 sm:py-14 scroll-mt-24">
       {/* Anchor for backward compatibility */}
       <div id="projects" className="sr-only" />
-      <div className="flex flex-col gap-16 md:gap-20">
+      <div className="flex flex-col gap-10 sm:gap-16 md:gap-20">
         {projects.map((proj, index) => (
           <ProjectCard key={proj.name} project={proj} index={index} />
         ))}

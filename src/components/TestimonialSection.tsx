@@ -43,20 +43,20 @@ export const TestimonialSection: React.FC = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="py-12 px-6 max-w-2xl mx-auto flex flex-col items-center text-center scroll-mt-24"
+      className="py-8 sm:py-12 px-4 sm:px-6 max-w-2xl mx-auto flex flex-col items-center text-center scroll-mt-24"
     >
       <div id="origin" className="sr-only" />
       {/* Quote icon */}
       <div
-        className={`mb-6 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+        className={`mb-4 sm:mb-6 ${isInView ? 'animate-fade-in-up' : 'opacity-0'}`}
         style={{ animationDelay: '0.1s' }}
       >
-        <Quote className="w-6 h-6 text-slate-900 mx-auto" />
+        <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-slate-900 mx-auto" />
       </div>
 
       {/* Large quote text */}
       <blockquote
-        className={`text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight font-sans mb-6 ${
+        className={`text-2xl sm:text-3xl md:text-[40px] lg:text-[44px] leading-[1.15] sm:leading-[1.1] text-[#0D212C] tracking-tight font-sans mb-4 sm:mb-6 ${
           isInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
         style={{ animationDelay: '0.2s' }}
@@ -66,7 +66,7 @@ export const TestimonialSection: React.FC = () => {
 
       {/* Author */}
       <p
-        className={`italic text-sm text-[#273C46] mb-8 ${
+        className={`italic text-xs sm:text-sm text-[#273C46] mb-6 sm:mb-8 ${
           isInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
         style={{ animationDelay: '0.3s' }}
@@ -76,27 +76,20 @@ export const TestimonialSection: React.FC = () => {
 
       {/* Company logos / key product types displayed as text */}
       <div
-        className={`flex items-center justify-center gap-6 md:gap-10 mb-12 flex-wrap ${
+        className={`flex items-center justify-center gap-4 sm:gap-8 md:gap-10 mb-8 sm:mb-12 flex-wrap ${
           isInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
         style={{ animationDelay: '0.4s' }}
       >
-        <span
-          className="font-medium text-slate-900 inline-block text-center tracking-tight"
-          style={{ width: '100px', fontSize: '22px' }}
-        >
+        <span className="font-medium text-slate-900 text-lg sm:text-2xl tracking-tight">
           Planifolia
         </span>
-        <span
-          className="font-medium text-slate-900 inline-block text-center tracking-tight"
-          style={{ width: '100px', fontSize: '22px' }}
-        >
+        <span className="text-slate-300">·</span>
+        <span className="font-medium text-slate-900 text-lg sm:text-2xl tracking-tight">
           Tahitensis
         </span>
-        <span
-          className="font-medium text-slate-900 inline-block text-center tracking-tight"
-          style={{ width: '110px', fontSize: '22px' }}
-        >
+        <span className="text-slate-300">·</span>
+        <span className="font-medium text-slate-900 text-lg sm:text-2xl tracking-tight">
           Gourmet A
         </span>
       </div>

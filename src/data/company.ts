@@ -13,8 +13,8 @@ export const COMPANY_INFO = {
   whatsappUrl: 'https://wa.me/6285800085297',
   socials: {
     instagram: 'https://www.instagram.com/sup.ervanilla/',
-    facebook: 'https://www.facebook.com/sup.ervanilla',
-    linkedin: 'https://www.linkedin.com/company/supervanilla',
-    threads: 'https://www.threads.net/@sup.ervanilla',
+    facebook: 'https://www.facebook.com/profile.php?id=61594182626366',
+    linkedin: 'https://www.linkedin.com/company/super-vanilla/',
+    threads: 'https://www.threads.com/@sup.ervanilla',
   },
 };

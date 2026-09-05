@@ -33,11 +33,11 @@ export default function App() {
       {/* 1. HERO SECTION (RATA KIRI / LEFT-ALIGNED) */}
       <section
         ref={heroRef}
-        className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 md:pt-14 pb-4 flex flex-col items-start text-left"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-6 sm:pt-10 md:pt-14 pb-4 flex flex-col items-start text-left"
       >
         {/* Origin Pill / Badge */}
         <div
-          className={`inline-flex items-center px-3.5 py-1.5 rounded-full bg-[#051A24]/5 border border-[#051A24]/10 text-xs font-mono uppercase tracking-wider text-[#051A24] mb-5 ${
+          className={`inline-flex items-center px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#051A24]/5 border border-[#051A24]/10 text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#051A24] mb-4 sm:mb-5 max-w-full truncate ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.1s' }}
@@ -47,7 +47,7 @@ export default function App() {
 
         {/* Main Heading (Rata Kiri) */}
         <h1
-          className={`text-4xl sm:text-5xl md:text-6xl lg:text-[70px] leading-[1.08] text-[#0D212C] font-sans tracking-tight max-w-4xl text-left mb-6 ${
+          className={`text-3xl sm:text-5xl md:text-6xl lg:text-[70px] leading-[1.12] sm:leading-[1.08] text-[#0D212C] font-sans tracking-tight max-w-4xl text-left mb-5 sm:mb-6 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.2s' }}
@@ -58,7 +58,7 @@ export default function App() {
 
         {/* Description / Value Proposition (Rata Kiri) */}
         <div
-          className={`max-w-2xl text-base md:text-lg text-[#051A24]/80 leading-relaxed text-left flex flex-col gap-4 mb-8 ${
+          className={`max-w-2xl text-sm sm:text-base md:text-lg text-[#051A24]/80 leading-relaxed text-left flex flex-col gap-3 sm:gap-4 mb-6 sm:mb-8 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.3s' }}
@@ -71,9 +71,9 @@ export default function App() {
           </p>
         </div>
 
-        {/* Action Buttons (Rata Kiri) */}
+        {/* Action Buttons (Rata Kiri & Mobile Friendly) */}
         <div
-          className={`flex flex-wrap items-center gap-3 sm:gap-4 mb-10 ${
+          className={`w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-2 ${
             heroInView ? 'animate-fade-in-up' : 'opacity-0'
           }`}
           style={{ animationDelay: '0.4s' }}
@@ -81,63 +81,60 @@ export default function App() {
           <Button
             variant="primary"
             onClick={() => setIsQuoteModalOpen(true)}
-            className="!px-7 !py-3.5 text-sm md:text-base font-medium shadow-button-primary"
+            className="w-full sm:w-auto text-center justify-center !px-7 !py-3.5 text-sm md:text-base font-medium shadow-button-primary min-h-[46px]"
           >
             Request a wholesale quote
           </Button>
           <Button
             variant="secondary"
             href="#products"
-            className="!px-6 !py-3.5 text-sm md:text-base font-medium"
+            className="w-full sm:w-auto text-center justify-center !px-6 !py-3.5 text-sm md:text-base font-medium min-h-[46px]"
           >
             Explore grades &amp; specs
           </Button>
         </div>
-
-        {/* Quick Specs Highlights (Rata Kiri) */}
-        <div
-          className={`w-full max-w-4xl pt-6 border-t border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-left ${
-            heroInView ? 'animate-fade-in-up' : 'opacity-0'
-          }`}
-          style={{ animationDelay: '0.5s' }}
-        >
-          <div>
-            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Grades</div>
-            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">Gourmet A &amp; Grade B</div>
-            <div className="text-xs text-[#051A24]/70 mt-0.5">16–22cm Gourmet Pods</div>
-          </div>
-          <div>
-            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Moisture</div>
-            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">25% – 35%</div>
-            <div className="text-xs text-[#051A24]/70 mt-0.5">Slow solar-cured</div>
-          </div>
-          <div>
-            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Vanillin Content</div>
-            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">&gt; 2.0% Natural</div>
-            <div className="text-xs text-[#051A24]/70 mt-0.5">CoA Lab Verified</div>
-          </div>
-          <div>
-            <div className="font-mono text-xs text-[#051A24]/60 uppercase">Fulfillment</div>
-            <div className="font-sans font-semibold text-base sm:text-lg text-[#051A24] mt-0.5">FOB &amp; CIF Global</div>
-            <div className="text-xs text-[#051A24]/70 mt-0.5">Phytosanitary Certified</div>
-          </div>
-        </div>
       </section>
 
-      {/* 2. INFINITE MARQUEE */}
-      <section className="w-full overflow-hidden mt-16 md:mt-20 mb-16 select-none" aria-label="Selected vanilla origin showcase">
+      {/* 2. INFINITE MARQUEE (FOTO YANG BERJALAN - LANGSUNG NAMPAK DI HERO) */}
+      <section className="w-full overflow-hidden mt-3 sm:mt-6 mb-8 sm:mb-12 md:mb-14 select-none" aria-label="Selected vanilla origin showcase">
         <div className="animate-marquee">
           {allMarqueeImages.map((imageUrl, idx) => (
-            <div key={`marquee-${idx}`} className="mx-3 shrink-0">
+            <div key={`marquee-${idx}`} className="mx-2 sm:mx-3 shrink-0">
               <img
                 src={imageUrl}
                 alt={`Vanilla origin showcase ${idx + 1}`}
-                className="h-[280px] md:h-[500px] w-[240px] md:w-[420px] object-cover rounded-2xl shadow-lg"
+                className="h-[230px] sm:h-[300px] md:h-[420px] w-[180px] sm:w-[250px] md:w-[350px] object-cover rounded-xl sm:rounded-2xl shadow-md"
                 loading={idx < 4 ? 'eager' : 'lazy'}
                 referrerPolicy="no-referrer"
               />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* 3. QUICK SPECS HIGHLIGHTS (DI BAWAH FOTO YANG BERJALAN) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-3 sm:py-6 md:py-8">
+        <div className="w-full max-w-5xl mx-auto py-6 sm:py-8 px-5 sm:px-8 md:px-10 rounded-2xl sm:rounded-3xl bg-slate-50/70 border border-slate-200/80 grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 text-left">
+          <div>
+            <div className="font-mono text-[11px] sm:text-xs text-[#051A24]/60 uppercase tracking-wider">Grades</div>
+            <div className="font-sans font-semibold text-sm sm:text-base md:text-lg text-[#051A24] mt-1">Gourmet A &amp; Grade B</div>
+            <div className="text-[11px] sm:text-xs text-[#051A24]/70 mt-0.5">16–22cm Gourmet Pods</div>
+          </div>
+          <div>
+            <div className="font-mono text-[11px] sm:text-xs text-[#051A24]/60 uppercase tracking-wider">Moisture</div>
+            <div className="font-sans font-semibold text-sm sm:text-base md:text-lg text-[#051A24] mt-1">25% – 35%</div>
+            <div className="text-[11px] sm:text-xs text-[#051A24]/70 mt-0.5">Slow solar-cured</div>
+          </div>
+          <div>
+            <div className="font-mono text-[11px] sm:text-xs text-[#051A24]/60 uppercase tracking-wider">Vanillin Content</div>
+            <div className="font-sans font-semibold text-sm sm:text-base md:text-lg text-[#051A24] mt-1">&gt; 2.0% Natural</div>
+            <div className="text-[11px] sm:text-xs text-[#051A24]/70 mt-0.5">CoA Lab Verified</div>
+          </div>
+          <div>
+            <div className="font-mono text-[11px] sm:text-xs text-[#051A24]/60 uppercase tracking-wider">Fulfillment</div>
+            <div className="font-sans font-semibold text-sm sm:text-base md:text-lg text-[#051A24] mt-1">FOB &amp; CIF Global</div>
+            <div className="text-[11px] sm:text-xs text-[#051A24]/70 mt-0.5">Phytosanitary Certified</div>
+          </div>
         </div>
       </section>
 

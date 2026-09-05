@@ -72,12 +72,40 @@ export const TestimonialCarousel: React.FC = () => {
   const [cardWidth, setCardWidth] = useState(427.5);
   const gap = 24;
 
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchDeltaX, setTouchDeltaX] = useState<number>(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsPaused(true);
+    setTouchStartX(e.touches[0].clientX);
+    setTouchDeltaX(0);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const currentX = e.touches[0].clientX;
+    setTouchDeltaX(currentX - touchStartX);
+  };
+
+  const handleTouchEnd = () => {
+    setIsPaused(false);
+    if (touchDeltaX > 50) {
+      prevSlide();
+    } else if (touchDeltaX < -50) {
+      nextSlide();
+    }
+    setTouchStartX(null);
+    setTouchDeltaX(0);
+  };
+
   // Update card width on resize
   useEffect(() => {
     const updateDimensions = () => {
       if (typeof window !== 'undefined') {
-        if (window.innerWidth < 768) {
-          setCardWidth(Math.max(280, window.innerWidth - 48));
+        if (window.innerWidth < 640) {
+          setCardWidth(Math.max(260, window.innerWidth - 48));
+        } else if (window.innerWidth < 1024) {
+          setCardWidth(340);
         } else {
           setCardWidth(427.5);
         }
@@ -124,45 +152,48 @@ export const TestimonialCarousel: React.FC = () => {
     <section
       id="reviews"
       ref={sectionRef}
-      className="w-full py-20 overflow-hidden select-none scroll-mt-24"
+      className="w-full py-12 sm:py-20 overflow-hidden select-none scroll-mt-24"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Header row */}
       <div
-        className={`px-6 mb-12 max-w-6xl mx-auto md:max-w-4xl md:ml-auto md:mr-12 lg:mr-24 flex flex-col sm:flex-row sm:items-end justify-between gap-6 ${
+        className={`px-4 sm:px-6 mb-8 sm:mb-12 max-w-6xl mx-auto md:max-w-4xl md:ml-auto md:mr-12 lg:mr-24 flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 ${
           isInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
         style={{ animationDelay: '0.1s' }}
       >
         <div>
-          <h2 className="text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight">
+          <h2 className="text-2xl sm:text-[36px] md:text-[40px] lg:text-[44px] leading-[1.1] text-[#0D212C] tracking-tight">
             What <span className="font-mondwest italic font-normal">buyers</span> say
           </h2>
         </div>
 
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-between sm:justify-end gap-4 sm:gap-6">
           <div className="flex items-center gap-2">
             <div className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-black text-black" />
+                <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-black text-black" />
               ))}
             </div>
-            <span className="font-sans font-medium text-sm text-[#0D212C]">Verified B2B Export</span>
+            <span className="font-sans font-medium text-xs sm:text-sm text-[#0D212C]">Verified B2B Export</span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={prevSlide}
               aria-label="Previous testimonial"
-              className="w-12 h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-[#051A24] hover:text-white transition-colors duration-200 cursor-pointer"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-[#051A24] hover:text-white transition-colors duration-200 cursor-pointer"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next testimonial"
-              className="w-12 h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-[#051A24] hover:text-white transition-colors duration-200 cursor-pointer"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-[#0D212C]/20 flex items-center justify-center text-[#0D212C] hover:bg-[#051A24] hover:text-white transition-colors duration-200 cursor-pointer"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -171,9 +202,9 @@ export const TestimonialCarousel: React.FC = () => {
       </div>
 
       {/* Carousel Track */}
-      <div className="w-full px-6 overflow-hidden">
+      <div className="w-full px-4 sm:px-6 overflow-hidden">
         <div
-          className="flex gap-6 will-change-transform"
+          className="flex gap-4 sm:gap-6 will-change-transform"
           style={{
             transform: `translateX(-${offset}px)`,
             transition: 'transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -182,8 +213,8 @@ export const TestimonialCarousel: React.FC = () => {
           {testimonials.map((item, idx) => (
             <div
               key={`${item.name}-${idx}`}
-              className="bg-white rounded-[32px] md:rounded-[40px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] px-6 md:pl-10 md:pr-24 py-8 flex flex-col justify-between shrink-0 transition-opacity duration-300"
-              style={{ width: `${cardWidth}px`, minHeight: '280px' }}
+              className="bg-white rounded-3xl md:rounded-[40px] shadow-[0_4px_16px_rgba(0,0,0,0.08)] p-6 md:pl-10 md:pr-16 py-7 sm:py-8 flex flex-col justify-between shrink-0 transition-opacity duration-300 border border-slate-100/80"
+              style={{ width: `${cardWidth}px`, minHeight: '260px' }}
             >
               <div>
                 {/* SVG Quote mark icon */}

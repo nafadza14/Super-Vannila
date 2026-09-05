@@ -72,12 +72,12 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
     <section
       id="contact"
       ref={sectionRef}
-      className="w-full py-12 px-6 scroll-mt-24"
+      className="w-full py-8 sm:py-12 px-4 sm:px-6 scroll-mt-24"
     >
       <div
         ref={containerRef}
         onMouseMove={handleMouseMove}
-        className={`relative max-w-7xl mx-auto py-32 md:py-48 rounded-[40px] shadow-card-light bg-white border border-slate-100 overflow-hidden flex flex-col items-center justify-center text-center select-none ${
+        className={`relative max-w-7xl mx-auto py-20 sm:py-32 md:py-48 px-4 sm:px-8 rounded-3xl md:rounded-[40px] shadow-card-light bg-white border border-slate-100 overflow-hidden flex flex-col items-center justify-center text-center select-none ${
           isInView ? 'animate-fade-in-up' : 'opacity-0'
         }`}
         style={{ animationDelay: '0.1s' }}
@@ -113,7 +113,7 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
         })}
 
         {/* Centered Heading in PP Mondwest serif */}
-        <h2 className="font-mondwest text-[48px] md:text-[64px] lg:text-[80px] text-[#0D212C] leading-none mb-12 tracking-tight z-20">
+        <h2 className="font-mondwest text-3xl sm:text-5xl md:text-[64px] lg:text-[80px] text-[#0D212C] leading-tight mb-8 sm:mb-12 tracking-tight z-20">
           Partner with us
         </h2>
 
@@ -121,15 +121,15 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
         <button
           type="button"
           onClick={onOpenQuote}
-          className="z-20 inline-flex items-center gap-4 bg-[#051A24] text-white rounded-full pl-3 pr-8 py-2.5 shadow-button-primary hover:bg-[#092736] transition-transform duration-200 active:scale-[0.98] cursor-pointer"
+          className="z-20 inline-flex items-center gap-3 sm:gap-4 bg-[#051A24] text-white rounded-full pl-2 sm:pl-3 pr-5 sm:pr-8 py-2 sm:py-2.5 shadow-button-primary hover:bg-[#092736] transition-transform duration-200 active:scale-[0.98] cursor-pointer max-w-[95%] sm:max-w-none"
         >
           <img
             src={TEAM_AVATAR_PHOTO}
             alt="Export Procurement Lead"
-            className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white/20 shrink-0"
             referrerPolicy="no-referrer"
           />
-          <span className="font-sans text-base font-medium">Talk to our export team</span>
+          <span className="font-sans text-sm sm:text-base font-medium truncate">Talk to our export team</span>
         </button>
       </div>
     </section>

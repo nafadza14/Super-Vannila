@@ -39,23 +39,23 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#051A24]/60 backdrop-blur-sm animate-fade-in-up">
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-3 sm:p-4 bg-[#051A24]/60 backdrop-blur-sm animate-fade-in-up">
       <div
-        className="bg-white rounded-[32px] md:rounded-[40px] max-w-2xl w-full p-6 md:p-10 shadow-2xl border border-slate-100 max-h-[90vh] overflow-y-auto relative"
+        className="bg-white rounded-3xl md:rounded-[40px] max-w-2xl w-full p-5 sm:p-7 md:p-10 shadow-2xl border border-slate-100 max-h-[92vh] overflow-y-auto relative"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
           aria-label="Close modal"
-          className="absolute top-6 right-6 w-10 h-10 rounded-full border border-[#0D212C]/10 flex items-center justify-center text-[#051A24] hover:bg-slate-100 transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full border border-[#0D212C]/10 flex items-center justify-center text-[#051A24] hover:bg-slate-100 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
 
         {submitted ? (
-          <div className="text-center py-8">
-            <CheckCircle className="w-14 h-14 text-emerald-600 mx-auto mb-4" />
-            <h3 className="font-mondwest text-3xl font-semibold text-[#051A24] mb-3">
+          <div className="text-center py-6 sm:py-8">
+            <CheckCircle className="w-12 h-12 sm:w-14 sm:h-14 text-emerald-600 mx-auto mb-4" />
+            <h3 className="font-mondwest text-2xl sm:text-3xl font-semibold text-[#051A24] mb-3">
               Quotation Request Received
             </h3>
             <p className="text-sm md:text-base text-[#051A24]/75 leading-relaxed max-w-md mx-auto mb-6">
@@ -67,14 +67,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
             <div className="flex flex-col sm:flex-row justify-center gap-3">
               <button
                 onClick={handleWhatsApp}
-                className="inline-flex items-center justify-center gap-2 bg-[#051A24] text-white rounded-full px-6 py-3 text-sm font-medium shadow-button-primary hover:bg-[#092736] transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-[#051A24] text-white rounded-full px-6 py-3 text-sm font-medium shadow-button-primary hover:bg-[#092736] transition-all min-h-[44px]"
               >
                 <span>Direct WhatsApp Inquiry</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
               <button
                 onClick={onClose}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-slate-200 text-sm font-medium text-[#051A24] hover:bg-slate-50 transition-all"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-slate-200 text-sm font-medium text-[#051A24] hover:bg-slate-50 transition-all min-h-[44px]"
               >
                 Close Window
               </button>
@@ -82,20 +82,20 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
           </div>
         ) : (
           <div>
-            <div className="mb-6">
-              <span className="font-mono text-xs text-[#051A24]/70 uppercase tracking-wider block mb-1">
+            <div className="mb-5 sm:mb-6 pr-8">
+              <span className="font-mono text-[11px] sm:text-xs text-[#051A24]/70 uppercase tracking-wider block mb-1">
                 Direct B2B Sourcing · Origin Indonesia
               </span>
-              <h3 className="font-mondwest text-2xl md:text-3xl font-semibold text-[#0D212C]">
+              <h3 className="font-mondwest text-2xl sm:text-3xl font-semibold text-[#0D212C]">
                 Request Wholesale Quotation
               </h3>
-              <p className="text-xs md:text-sm text-[#051A24]/70 mt-1">
+              <p className="text-xs sm:text-sm text-[#051A24]/70 mt-1">
                 Tell us your preferred vanilla grade, estimated quantity, and destination port. Our export team responds within 24 hours.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3.5 sm:gap-4 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
                   <label className="block text-xs font-medium text-[#051A24] mb-1">
                     Your Name *
@@ -106,7 +106,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                     placeholder="e.g. John Miller"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
                   />
                 </div>
 
@@ -120,12 +120,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                     placeholder="e.g. Pacific Flavor Labs"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
                   <label className="block text-xs font-medium text-[#051A24] mb-1">
                     Business Email *
@@ -136,7 +136,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                     placeholder="procurement@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
                   />
                 </div>
 
@@ -150,12 +150,12 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                     placeholder="e.g. United States, Germany, Japan"
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
                   <label className="block text-xs font-medium text-[#051A24] mb-1">
                     Product Specification
@@ -163,7 +163,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                   <select
                     value={formData.product}
                     onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] bg-white transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] bg-white transition-colors"
                   >
                     <option value="Vanilla Planifolia">Vanilla Planifolia (Bourbon type)</option>
                     <option value="Vanilla Tahitensis">Vanilla Tahitensis (Floral / Fruity)</option>
@@ -178,7 +178,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                   <select
                     value={formData.grade}
                     onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] bg-white transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] bg-white transition-colors"
                   >
                     <option value="Grade A Gourmet">Grade A Gourmet (Plump, 28-33% Moisture)</option>
                     <option value="Grade B Extract">Grade B Extract (Concentrated, 20-25% Moisture)</option>
@@ -187,7 +187,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                 <div>
                   <label className="block text-xs font-medium text-[#051A24] mb-1">
                     Estimated Quantity (kg)
@@ -197,7 +197,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                     placeholder="e.g. 50 kg, 200 kg, 1,000 kg"
                     value={formData.quantity}
                     onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
                   />
                 </div>
 
@@ -210,7 +210,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                     placeholder="e.g. Los Angeles (LAX / Port), Rotterdam"
                     value={formData.destinationPort}
                     onChange={(e) => setFormData({ ...formData, destinationPort: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors"
                   />
                 </div>
               </div>
@@ -222,7 +222,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                 <select
                   value={formData.application}
                   onChange={(e) => setFormData({ ...formData, application: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] bg-white transition-colors"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] bg-white transition-colors"
                 >
                   <option value="Food & Bakery">Bakery, Pastry & Food Manufacturing</option>
                   <option value="Extract Production">Vanilla Extract & Flavor Manufacturing</option>
@@ -243,13 +243,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                   placeholder="Tell us about your moisture preference, vanillin requirements, bean length, or sample request..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors resize-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-base sm:text-sm text-[#051A24] focus:outline-none focus:border-[#051A24] transition-colors resize-none"
                 />
               </div>
 
               <div className="mt-2 flex flex-col sm:flex-row gap-3 items-center justify-between">
-                <Button variant="primary" type="submit" className="w-full sm:w-auto !py-3">
-                  <span className="flex items-center gap-2">
+                <Button variant="primary" type="submit" className="w-full sm:w-auto !py-3 min-h-[44px]">
+                  <span className="flex items-center justify-center gap-2">
                     <Send className="w-4 h-4" />
                     Request Wholesale Quotation
                   </span>
@@ -257,7 +257,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                 <button
                   type="button"
                   onClick={handleWhatsApp}
-                  className="text-xs text-[#051A24]/75 hover:text-[#051A24] underline transition-colors"
+                  className="text-xs text-[#051A24]/75 hover:text-[#051A24] underline transition-colors py-2 text-center"
                 >
                   Need instant WhatsApp assistance? Click here
                 </button>
