@@ -38,4 +38,5 @@ export const PRODUCT_PHOTOS = {
   tahitensis: STOCK_PHOTOS[6],  // c5/fe/72/c5fe7268e76a29a1d14610080019e709.jpg (1200x)
 };
 
-export const TEAM_AVATAR_PHOTO = STOCK_PHOTOS[10]; // 4f/42/eb/4f42eb97ad596a947a319275cdeb8227.jpg
+export const TEAM_AVATAR_PHOTO =
+  'https://media.licdn.com/dms/image/v2/C5603AQEcqe9LX5cUYw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1624095409930?e=1790208000&v=beta&t=cS6NCgG6Da0no3PSo7tbys7zhWhP99GODS4v1hwIdAE';
