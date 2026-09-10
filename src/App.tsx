@@ -36,16 +36,6 @@ export default function App() {
         ref={heroRef}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-6 sm:pt-10 md:pt-14 pb-4 flex flex-col items-start text-left"
       >
-        {/* Origin Pill / Badge */}
-        <div
-          className={`inline-flex items-center px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#051A24]/5 border border-[#051A24]/10 text-[11px] sm:text-xs font-mono uppercase tracking-wider text-[#051A24] mb-4 sm:mb-5 max-w-full truncate ${
-            heroInView ? 'animate-fade-in-up' : 'opacity-0'
-          }`}
-          style={{ animationDelay: '0.1s' }}
-        >
-          Indonesian Vanilla Origin · Direct Bulk &amp; Wholesale Exporter
-        </div>
-
         {/* Main Heading (Rata Kiri) */}
         <h1
           className={`text-3xl sm:text-5xl md:text-6xl lg:text-[70px] leading-[1.12] sm:leading-[1.08] text-[#0D212C] font-sans tracking-tight max-w-4xl text-left mb-5 sm:mb-6 ${
