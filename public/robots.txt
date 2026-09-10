@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://supervanilla.biz.id/sitemap.xml

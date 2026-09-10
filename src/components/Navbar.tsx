@@ -22,6 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQuote }) => {
   const navLinks = [
     { label: 'Products & Grades', href: '#products' },
     { label: 'Wholesale & Supply', href: '#wholesale' },
+    { label: 'Export Catalog', href: '#catalog' },
     { label: 'Origin & Curing', href: '#about' },
     { label: 'Buyer Reviews', href: '#reviews' },
     { label: 'Contact Desk', href: '#contact' },

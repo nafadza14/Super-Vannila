@@ -1,7 +1,7 @@
 export const COMPANY_INFO = {
   brandName: 'Super Vanilla',
   legalName: 'PT. MUTIARA INTERNUSA INDONESIA',
-  domain: 'supervanilla.id',
+  domain: 'Supervanilla.biz.id',
   headOffice: {
     title: 'Mutiara HQ',
     address: 'Kecila 002/001, Kemranjen, Banyumas, Central Java',

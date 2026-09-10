@@ -53,6 +53,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
           <a href="#wholesale" className="text-sm text-[#051A24] hover:opacity-70 transition-opacity py-1.5 flex items-center min-h-[36px]">
             Wholesale &amp; Supply
           </a>
+          <a href="#catalog" className="text-sm text-[#051A24] font-medium hover:opacity-70 transition-opacity py-1.5 flex items-center min-h-[36px]">
+            Download Catalog (PDF)
+          </a>
           <a href="#about" className="text-sm text-[#051A24] hover:opacity-70 transition-opacity py-1.5 flex items-center min-h-[36px]">
             Direct Origin &amp; Curing
           </a>
@@ -80,12 +83,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenQuote }) => {
               <ArrowUpRight className="w-3.5 h-3.5 text-[#051A24]/60" />
             </a>
             <a
-              href="https://supervanilla.id/"
+              href="https://supervanilla.biz.id/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm text-[#051A24] hover:opacity-70 transition-opacity py-1"
             >
-              <span>Official Website: supervanilla.id</span>
+              <span>Official Website: Supervanilla.biz.id</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#051A24]/60" />
             </a>
           </div>

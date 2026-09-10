@@ -18,7 +18,7 @@ const baseTestimonials: Testimonial[] = [
     quote:
       'Super Vanilla delivers consistent moisture and vanillin levels shipment after shipment. Their direct origin sourcing and transparent export documentation gave us full supply chain confidence.',
     avatar:
-      'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150',
+      'https://i.pinimg.com/1200x/18/4a/a7/184aa7a55980248e8ff6daf62a1fe7cb.jpg',
   },
   {
     name: 'Hélène Laurent',
@@ -27,7 +27,7 @@ const baseTestimonials: Testimonial[] = [
     quote:
       'The gourmet Grade A Planifolia beans from Super Vanilla have an incredible oily sheen and rich vanillin aroma. Our pastry network relies completely on their quality.',
     avatar:
-      'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
+      'https://i.pinimg.com/1200x/59/53/ff/5953fffa9fc6a76bd814a62ba8f74d93.jpg',
   },
   {
     name: 'Dr. Kenji Sato',
@@ -36,7 +36,7 @@ const baseTestimonials: Testimonial[] = [
     quote:
       'Finding reliable Grade B beans for extract production with zero synthetic additives was challenging until we partnered with Super Vanilla. Truly export-grade quality.',
     avatar:
-      'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150',
+      'https://i.pinimg.com/236x/ad/12/3c/ad123cfd65ec9af4ff4e88216b7916f5.jpg',
   },
   {
     name: 'Sarah Jenkins',
@@ -45,7 +45,7 @@ const baseTestimonials: Testimonial[] = [
     quote:
       'Their communication and export handling to Melbourne was seamless. Phytosanitary certificates and vacuum packaging arrived in pristine commercial condition.',
     avatar:
-      'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150',
+      'https://i.pinimg.com/736x/9e/4f/e4/9e4fe4a1ae0be89488b1cdf9d52c42ee.jpg',
   },
   {
     name: 'Tobias Weber',
@@ -54,7 +54,7 @@ const baseTestimonials: Testimonial[] = [
     quote:
       'Direct connection to Indonesian vanilla origins without middleman markups. Super Vanilla is now our primary trusted partner for all bulk vanilla bean procurement.',
     avatar:
-      'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=150',
+      'https://i.pinimg.com/1200x/f2/cb/1c/f2cb1c7f4f5eb02682691cb5eb4813d7.jpg',
   },
 ];
 

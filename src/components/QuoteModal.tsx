@@ -26,8 +26,26 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
+    
+    if (webhookUrl) {
+      try {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8',
+          },
+          // Send as string to avoid CORS preflight issues with application/json
+          body: JSON.stringify(formData)
+        });
+      } catch (error) {
+        console.error('Failed to submit quote request:', error);
+      }
+    }
+    
     setSubmitted(true);
   };
 

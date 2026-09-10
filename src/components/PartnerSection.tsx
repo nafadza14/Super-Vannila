@@ -104,8 +104,9 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
             >
               <img
                 src={item.image}
-                alt="preview"
+                alt="Partner showcase preview"
                 className="w-full h-full object-cover rounded-xl"
+                loading="lazy"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -127,6 +128,7 @@ export const PartnerSection: React.FC<PartnerSectionProps> = ({ onOpenQuote }) =
             src={TEAM_AVATAR_PHOTO}
             alt="Export Procurement Lead"
             className="w-9 h-9 sm:w-10 sm:h-10 rounded-full object-cover border-2 border-white/20 shrink-0"
+            loading="lazy"
             referrerPolicy="no-referrer"
           />
           <span className="font-sans text-sm sm:text-base font-medium truncate">Talk to our export team</span>

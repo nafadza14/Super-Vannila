@@ -1,6 +1,6 @@
 {
   "name": "Super Vanilla",
-  "description": "Indonesian Vanilla Supplier & Exporter — Premium vanilla beans directly from Indonesia for wholesale, food manufacturing, and global export.",
+  "description": "Indonesian Vanilla Supplier & Exporter. Premium vanilla beans directly from Indonesia for wholesale, food manufacturing, and global export.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
