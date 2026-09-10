@@ -12,6 +12,7 @@ import PricingSection from './components/PricingSection';
 import TestimonialCarousel from './components/TestimonialCarousel';
 import ProjectsSection from './components/ProjectsSection';
 import CatalogDownloadSection from './components/CatalogDownloadSection';
+import GallerySection from './components/GallerySection';
 import PartnerSection from './components/PartnerSection';
 import Footer from './components/Footer';
 import CopyrightBar from './components/CopyrightBar';
@@ -143,6 +144,9 @@ export default function App() {
 
       {/* 7. DOWNLOAD CATALOG SECTION (DIRECTLY ABOVE PARTNER WITH US) */}
       <CatalogDownloadSection onOpenQuote={() => setIsQuoteModalOpen(true)} />
+
+      {/* GALLERY SECTION */}
+      <GallerySection />
 
       {/* 8. PARTNER SECTION */}
       <PartnerSection onOpenQuote={() => setIsQuoteModalOpen(true)} />
